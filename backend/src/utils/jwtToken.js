@@ -9,9 +9,9 @@ export const generateToken = (user) => {
 export const verifyToken = (token) => {
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    return decoded; // Return the decoded token (the user info)
+    return decoded;
   } catch (error) {
     console.log("Token verification error:", error.message);
-    throw new Error("Invalid token"); // Throw an error if token verification fails
+    throw new Error("Invalid token");
   }
 };
